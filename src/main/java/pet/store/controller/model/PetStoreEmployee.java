@@ -8,13 +8,16 @@ import pet.store.entity.Employee;
 @NoArgsConstructor
 public class PetStoreEmployee {
 	private Long employeeId;
-	private Long storeId;
 	private String employeeFirstName;
 	private String employeeLastName;
-	private Long employeePhone;
+	private String employeePhone;
 	private String jobTitle;
 	
 	public PetStoreEmployee(Employee employee) {
-		
+		employeeId = employee.getEmployeeId();
+		employeeFirstName = employee.getEmployeeFirstName();
+		employeeLastName = employee.getEmployeeLastName();
+		employeePhone = employee.getEmployeePhone();
+		jobTitle = employee.getJobTitle();
 	}
 }

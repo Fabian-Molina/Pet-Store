@@ -17,11 +17,10 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long employeeId;
-	private Long storeId;
 	
 	private String employeeFirstName;
 	private String employeeLastName;
-	private Long employeePhone;
+	private String employeePhone;
 	private String jobTitle;
 	
 	@EqualsAndHashCode.Exclude

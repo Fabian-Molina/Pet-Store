@@ -17,8 +17,8 @@ public class PetStoreData {
 	private String storeAddress;
 	private String storeCity;
 	private String storeState;
-	private Long storeZip;
-	private Long storePhone;
+	private String storeZip;
+	private String storePhone;
 	private Set<PetStoreCustomer> customers = new HashSet<>();
 	private Set<PetStoreEmployee> employees = new HashSet<>();
 
@@ -31,12 +31,12 @@ public class PetStoreData {
 		storeZip = petStore.getStoreZip();
 		storePhone = petStore.getStorePhone();
 
-		for (PetStoreCustomer customer : getCustomers()) {
-			customers.add(customer);
+		for (Customer customer : petStore.getCustomers()) {
+			customers.add(new PetStoreCustomer(customer));
 		}
 		
-		for (PetStoreEmployee employee : getEmployees()) {
-			employees.add(employee);
+		for (Employee employee : petStore.getEmployees()) {
+			employees.add(new PetStoreEmployee(employee));
 		}
 	}
 }
